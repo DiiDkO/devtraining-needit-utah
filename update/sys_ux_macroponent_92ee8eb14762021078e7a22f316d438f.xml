@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
     <sys_ux_macroponent action="INSERT_OR_UPDATE">
         <associated_types/>
-        <bundles/>
+        <bundles>[
+    {
+        "definitionId": "d6c0f4f531825510f8773d3775164e01",
+        "instanceId": "form_1",
+        "useByReference": false
+    },
+    {
+        "definitionId": "d6c0f4f531825510f8773d3775164e01",
+        "instanceId": "form_2",
+        "useByReference": false
+    }
+]</bundles>
         <category>page</category>
         <component_dependencies/>
         <composition>[
@@ -322,7 +333,7 @@
                                     "primaryValue": {
                                         "binding": {
                                             "address": [
-                                                "add_user_to_text_string_1",
+                                                "add_user_to_text_string",
                                                 "output"
                                             ]
                                         },
@@ -335,7 +346,7 @@
                                     "secondaryItems": {
                                         "binding": {
                                             "address": [
-                                                "next_needit_form",
+                                                "next_needit_form_1",
                                                 "nowRecordCommonHeader",
                                                 "secondaryItems"
                                             ]
@@ -345,7 +356,7 @@
                                     "subHeadingValue": {
                                         "binding": {
                                             "address": [
-                                                "next_needit_form",
+                                                "next_needit_form_1",
                                                 "nowRecordCommonHeader",
                                                 "primaryValue"
                                             ]
@@ -355,7 +366,11 @@
                                     "sysId": {
                                         "binding": {
                                             "address": [
-                                                "my_next_needit"
+                                                "my_next_needit",
+                                                "results",
+                                                "0",
+                                                "sys_id",
+                                                "valuer"
                                             ]
                                         },
                                         "type": "DATA_OUTPUT_BINDING"
@@ -371,6 +386,102 @@
                                 },
                                 "slot": null,
                                 "styles": null
+                            },
+                            {
+                                "definition": {
+                                    "id": "d37ce8abca89d02905fed903c8e34d8e",
+                                    "type": "MACROPONENT"
+                                },
+                                "elementId": "view_record_button",
+                                "elementLabel": "View Record button",
+                                "eventMappings": [
+                                    {
+                                        "eventMappingId": "clxeelqjhhmaabbniddffhhriidfabbaor",
+                                        "isConfiguration": false,
+                                        "offRowStorageId": null,
+                                        "sourceEventApiName": "sn_button.NOW_BUTTON#CLICKED",
+                                        "sourceEventCorrelationId": null,
+                                        "sourceEventDefinition": {
+                                            "apiName": "sn_button.NOW_BUTTON#CLICKED",
+                                            "id": null,
+                                            "type": "UXEVENT"
+                                        },
+                                        "sourceEventSysId": null,
+                                        "targets": [
+                                            {
+                                                "broker": null,
+                                                "clientScript": null,
+                                                "conditional": null,
+                                                "declarativeAction": null,
+                                                "event": {
+                                                    "apiName": "x_58872_needit.MODAL_SELECTED_RELAY_92ee8eb14762021078e7a22f316d438f",
+                                                    "payload": {
+                                                        "type": "JSON_LITERAL",
+                                                        "value": {
+                                                            "bare": true,
+                                                            "displayOptions": null,
+                                                            "modalId": "[component-id$='next_needit_modal']",
+                                                            "showModal": true,
+                                                            "viewportElementId": null,
+                                                            "viewportFields": null,
+                                                            "viewportParams": null,
+                                                            "viewportRoute": null
+                                                        }
+                                                    },
+                                                    "sysId": "9ffdd3c393e242105c90b6918bba10b3"
+                                                },
+                                                "operation": null,
+                                                "targetId": "clxeelqjhhnaabbnjddffhhrbempiwccbb",
+                                                "type": "EVENT"
+                                            }
+                                        ]
+                                    }
+                                ],
+                                "isHidden": {
+                                    "type": "JSON_LITERAL",
+                                    "value": null
+                                },
+                                "preset": null,
+                                "propertyValues": {
+                                    "configAria": {
+                                        "type": "JSON_LITERAL",
+                                        "value": {}
+                                    },
+                                    "disabled": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "icon": {
+                                        "type": "JSON_LITERAL",
+                                        "value": null
+                                    },
+                                    "label": {
+                                        "type": "TRANSLATION_LITERAL",
+                                        "value": {
+                                            "code": null,
+                                            "comment": "",
+                                            "message": "View Record"
+                                        }
+                                    },
+                                    "size": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "md"
+                                    },
+                                    "tooltipContent": {
+                                        "type": "TRANSLATION_LITERAL",
+                                        "value": {
+                                            "code": null,
+                                            "comment": "",
+                                            "message": "Enter a label"
+                                        }
+                                    },
+                                    "variant": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "secondary"
+                                    }
+                                },
+                                "slot": null,
+                                "styles": null
                             }
                         ],
                         "layout": {
@@ -380,14 +491,18 @@
                                     {
                                         "element_id": "my_next_needit_record",
                                         "styles": {}
+                                    },
+                                    {
+                                        "element_id": "view_record_button",
+                                        "styles": {}
                                     }
                                 ],
                                 "root": null,
                                 "rules": null,
                                 "styles": {
-                                    "align-items": "center",
-                                    "flex-direction": "row",
-                                    "justify-content": "center"
+                                    "align-items": "flex-end",
+                                    "flex": "custom",
+                                    "flex-direction": "row"
                                 },
                                 "templateId": "5832fd4d53c31010e6bcddeeff7b12db",
                                 "type": "flex"
@@ -441,6 +556,7 @@
                         {
                             "element_id": "next_needit",
                             "styles": {
+                                "align-self": "flex-end",
                                 "background": "#81B5A1",
                                 "width": ""
                             }
@@ -450,6 +566,7 @@
                     "rules": null,
                     "styles": {
                         "align-items": "center",
+                        "flex": "custom",
                         "flex-direction": "row",
                         "justify-content": "center"
                     },
@@ -3562,6 +3679,513 @@
         },
         "slot": null,
         "styles": null
+    },
+    {
+        "definition": {
+            "id": "05d8b1515b230010b913cbd59b81c71a",
+            "type": "MACROPONENT"
+        },
+        "elementId": "view_record",
+        "elementLabel": "View Record",
+        "eventMappings": [
+            
+        ],
+        "isHidden": {
+            "type": "JSON_LITERAL",
+            "value": null
+        },
+        "preset": null,
+        "propertyValues": {
+            "buttonLabel": {
+                "type": "TRANSLATION_LITERAL",
+                "value": {
+                    "code": null,
+                    "comment": "",
+                    "message": "Done"
+                }
+            },
+            "content": {
+                "type": "TRANSLATION_LITERAL",
+                "value": {
+                    "code": null,
+                    "comment": "",
+                    "message": "The record form will go here"
+                }
+            },
+            "defer": {
+                "type": "JSON_LITERAL",
+                "value": true
+            },
+            "enableResizable": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "headerLabel": {
+                "type": "TRANSLATION_LITERAL",
+                "value": {
+                    "code": null,
+                    "comment": "",
+                    "message": " Record number"
+                }
+            },
+            "preventDefaultAction": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "resizableMaxHeight": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "resizableMaxWidth": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "resizableMinHeight": {
+                "type": "JSON_LITERAL",
+                "value": 133
+            },
+            "resizableMinWidth": {
+                "type": "JSON_LITERAL",
+                "value": 420
+            },
+            "size": {
+                "type": "JSON_LITERAL",
+                "value": "md"
+            }
+        },
+        "slot": null,
+        "styles": null
+    },
+    {
+        "definition": {
+            "id": "9c2e3b0978b3250ef3081204f151026a",
+            "type": "MACROPONENT"
+        },
+        "elementId": "next_needit_modal",
+        "elementLabel": "Next NeedIt modal",
+        "eventMappings": [
+            
+        ],
+        "isHidden": {
+            "type": "JSON_LITERAL",
+            "value": null
+        },
+        "overrides": {
+            "composition": [
+                {
+                    "definition": {
+                        "id": "d356d14b6e293a3020a244b63d278d8f",
+                        "type": "MACROPONENT"
+                    },
+                    "elementId": "header_1",
+                    "elementLabel": "Header 1",
+                    "eventMappings": [
+                        
+                    ],
+                    "isHidden": {
+                        "type": "JSON_LITERAL",
+                        "value": null
+                    },
+                    "overrides": {
+                        "composition": [
+                            {
+                                "definition": {
+                                    "id": "4335ba6dca80378f7ba7a67cd6667bec",
+                                    "type": "MACROPONENT"
+                                },
+                                "elementId": "next_needit_form_title",
+                                "elementLabel": "Next NeedIt Form Title",
+                                "eventMappings": [
+                                    
+                                ],
+                                "isHidden": {
+                                    "type": "JSON_LITERAL",
+                                    "value": null
+                                },
+                                "propertyValues": {
+                                    "css": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "* { }"
+                                    },
+                                    "tag": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "h2"
+                                    },
+                                    "text": {
+                                        "type": "TRANSLATION_LITERAL",
+                                        "value": {
+                                            "code": null,
+                                            "comment": "",
+                                            "message": "Next NeedIt Details"
+                                        }
+                                    }
+                                },
+                                "slot": null,
+                                "styles": null
+                            }
+                        ],
+                        "layout": {
+                            "default": {
+                                "children": null,
+                                "items": [
+                                    {
+                                        "element_id": "next_needit_form_title",
+                                        "styles": {
+                                            "align-self": "center"
+                                        }
+                                    }
+                                ],
+                                "root": null,
+                                "rules": null,
+                                "styles": {
+                                    "flex-direction": "column"
+                                },
+                                "templateId": "5832fd4d53c31010e6bcddeeff7b12db",
+                                "type": "flex"
+                            },
+                            "version": "3.0.0"
+                        }
+                    },
+                    "preset": null,
+                    "propertyValues": {
+                        "ariaRegionHeadingLevel": {
+                            "type": "JSON_LITERAL",
+                            "value": "1"
+                        },
+                        "ariaRegionName": {
+                            "type": "TRANSLATION_LITERAL",
+                            "value": {
+                                "code": null,
+                                "comment": "",
+                                "message": ""
+                            }
+                        },
+                        "ariaRole": {
+                            "type": "JSON_LITERAL",
+                            "value": ""
+                        },
+                        "hideEmptyStateUi": {
+                            "type": "JSON_LITERAL",
+                            "value": true
+                        },
+                        "includeAriaHeading": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "slotWrapperBehavior": {
+                            "type": "JSON_LITERAL",
+                            "value": "fullheight"
+                        },
+                        "type": {
+                            "type": "JSON_LITERAL",
+                            "value": "section"
+                        }
+                    },
+                    "slot": null,
+                    "styles": null
+                },
+                {
+                    "definition": {
+                        "id": "d356d14b6e293a3020a244b63d278d8f",
+                        "type": "MACROPONENT"
+                    },
+                    "elementId": "body_1",
+                    "elementLabel": "Body 1",
+                    "eventMappings": [
+                        
+                    ],
+                    "isHidden": {
+                        "type": "JSON_LITERAL",
+                        "value": null
+                    },
+                    "overrides": {
+                        "composition": [
+                            {
+                                "bundleLink": {
+                                    "bundleInstanceId": "form_2",
+                                    "elementType": "root"
+                                },
+                                "definition": {
+                                    "id": "cdf8d604a3fda59e69ccd6dd407263d6",
+                                    "type": "MACROPONENT"
+                                },
+                                "elementId": "form_default",
+                                "elementLabel": "Form Default",
+                                "eventMappings": [
+                                    
+                                ],
+                                "extensionPoints": [
+                                    
+                                ],
+                                "isHero": false,
+                                "isHidden": {
+                                    "type": "JSON_LITERAL",
+                                    "value": null
+                                },
+                                "isNonDestructive": false,
+                                "items": [
+                                    
+                                ],
+                                "overrides": null,
+                                "preset": null,
+                                "propertyValues": {
+                                    "config": {
+                                        "type": "JSON_LITERAL",
+                                        "value": null
+                                    },
+                                    "disableCollapse": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "encodedRecord": {
+                                        "type": "JSON_LITERAL",
+                                        "value": null
+                                    },
+                                    "fields": {
+                                        "binding": {
+                                            "address": [
+                                                "next_needit_form_1",
+                                                "nowRecordFormBlob",
+                                                "formFieldValues"
+                                            ]
+                                        },
+                                        "type": "DATA_OUTPUT_BINDING"
+                                    },
+                                    "formMessages": {
+                                        "type": "JSON_LITERAL",
+                                        "value": [
+                                            
+                                        ]
+                                    },
+                                    "inRecordPageTab": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "inUiBuilder": {
+                                        "type": "JSON_LITERAL",
+                                        "value": true
+                                    },
+                                    "isContextMenuHidden": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "isFirstSectionTitleHidden": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "isFormOptionsHidden": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "isRemovePaddingLeft": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "isSectionMenuHidden": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "isSectionTitleHidden": {
+                                        "type": "JSON_LITERAL",
+                                        "value": false
+                                    },
+                                    "relatedLists": {
+                                        "type": "JSON_LITERAL",
+                                        "value": ""
+                                    },
+                                    "scrollableHost": {
+                                        "type": "JSON_LITERAL",
+                                        "value": null
+                                    },
+                                    "sectionHeadingLevel": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "2"
+                                    },
+                                    "sections": {
+                                        "binding": {
+                                            "address": [
+                                                "next_needit_form_1",
+                                                "nowRecordFormBlob",
+                                                "sections"
+                                            ]
+                                        },
+                                        "type": "DATA_OUTPUT_BINDING"
+                                    },
+                                    "serializedChanges": {
+                                        "type": "JSON_LITERAL",
+                                        "value": [
+                                            
+                                        ]
+                                    },
+                                    "sysId": {
+                                        "binding": {
+                                            "address": [
+                                                "my_next_needit",
+                                                "results",
+                                                "0",
+                                                "sys_id",
+                                                "value"
+                                            ]
+                                        },
+                                        "type": "DATA_OUTPUT_BINDING"
+                                    },
+                                    "table": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "x_58872_needit_needit"
+                                    },
+                                    "userSession": {
+                                        "binding": {
+                                            "address": [
+                                                "user"
+                                            ],
+                                            "category": "session"
+                                        },
+                                        "type": "CONTEXT_BINDING"
+                                    },
+                                    "view": {
+                                        "type": "JSON_LITERAL",
+                                        "value": "experience_list"
+                                    }
+                                },
+                                "slot": null,
+                                "styles": null
+                            }
+                        ],
+                        "layout": {
+                            "default": {
+                                "children": null,
+                                "items": [
+                                    {
+                                        "element_id": "form_default",
+                                        "styles": {
+                                            "background-color": "inherit",
+                                            "margin-top": "calc(var(--now-scale-space--xl, 1)*1.5rem)",
+                                            "padding-inline-end": "calc(var(--now-scale-space--xl, 1)*1.5rem)"
+                                        }
+                                    }
+                                ],
+                                "root": null,
+                                "rules": null,
+                                "styles": {
+                                    "flex-direction": "column"
+                                },
+                                "templateId": "5832fd4d53c31010e6bcddeeff7b12db",
+                                "type": "flex"
+                            },
+                            "version": "3.0.0"
+                        }
+                    },
+                    "preset": null,
+                    "propertyValues": {
+                        "ariaRegionHeadingLevel": {
+                            "type": "JSON_LITERAL",
+                            "value": "1"
+                        },
+                        "ariaRegionName": {
+                            "type": "TRANSLATION_LITERAL",
+                            "value": {
+                                "code": null,
+                                "comment": "",
+                                "message": ""
+                            }
+                        },
+                        "ariaRole": {
+                            "type": "JSON_LITERAL",
+                            "value": ""
+                        },
+                        "hideEmptyStateUi": {
+                            "type": "JSON_LITERAL",
+                            "value": true
+                        },
+                        "includeAriaHeading": {
+                            "type": "JSON_LITERAL",
+                            "value": false
+                        },
+                        "slotWrapperBehavior": {
+                            "type": "JSON_LITERAL",
+                            "value": "fullheight"
+                        },
+                        "type": {
+                            "type": "JSON_LITERAL",
+                            "value": "section"
+                        }
+                    },
+                    "slot": null,
+                    "styles": null
+                }
+            ],
+            "layout": {
+                "default": {
+                    "children": null,
+                    "items": [
+                        {
+                            "element_id": "header_1",
+                            "styles": {}
+                        },
+                        {
+                            "element_id": "body_1",
+                            "styles": {}
+                        }
+                    ],
+                    "root": null,
+                    "rules": null,
+                    "styles": {
+                        "display": "flex",
+                        "flex-direction": "column",
+                        "gap": "var(--now-static-space--lg)",
+                        "overflow": "hidden"
+                    },
+                    "templateId": "5832fd4d53c31010e6bcddeeff7b12db",
+                    "type": "flex"
+                },
+                "version": "3.0.0"
+            }
+        },
+        "preset": null,
+        "propertyValues": {
+            "bare": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "defer": {
+                "type": "JSON_LITERAL",
+                "value": true
+            },
+            "disableDismiss": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "enableResizable": {
+                "type": "JSON_LITERAL",
+                "value": false
+            },
+            "labelledby": {
+                "type": "JSON_LITERAL",
+                "value": ""
+            },
+            "resizableMaxHeight": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "resizableMaxWidth": {
+                "type": "JSON_LITERAL",
+                "value": null
+            },
+            "resizableMinHeight": {
+                "type": "JSON_LITERAL",
+                "value": 133
+            },
+            "resizableMinWidth": {
+                "type": "JSON_LITERAL",
+                "value": 420
+            },
+            "size": {
+                "type": "JSON_LITERAL",
+                "value": "md"
+            }
+        },
+        "slot": null,
+        "styles": null
     }
 ]</composition>
         <da_relay_models/>
@@ -3599,7 +4223,7 @@
             },
             "returnFieldMetadata": {
                 "type": "JSON_LITERAL",
-                "value": false
+                "value": true
             },
             "returnFields": {
                 "type": "JSON_LITERAL",
@@ -3618,12 +4242,37 @@
     },
     {
         "definition": {
+            "id": "a55c174393e242105c90b6918bba1080",
+            "type": "TRANSFORM"
+        },
+        "dependencies": {},
+        "elementId": "add_user_to_text_string",
+        "elementLabel": "Add User to Text String",
+        "eventMappings": [
+            
+        ],
+        "inputValues": {
+            "userFullName": {
+                "binding": {
+                    "address": [
+                        "user",
+                        "fullName"
+                    ],
+                    "category": "session"
+                },
+                "type": "CONTEXT_BINDING"
+            }
+        },
+        "readEvaluationMode": "EAGER"
+    },
+    {
+        "definition": {
             "id": "dc6e87a5232200100e4bc50947bf654b",
             "type": "CLIENT_STATE"
         },
         "dependencies": {},
-        "elementId": "next_needit_form",
-        "elementLabel": "Next NeedIt Form",
+        "elementId": "next_needit_form_1",
+        "elementLabel": "Next NeedIt Form 1",
         "eventMappings": [
             
         ],
@@ -3703,35 +4352,10 @@
             }
         },
         "readEvaluationMode": "EAGER"
-    },
-    {
-        "definition": {
-            "id": "a55c174393e242105c90b6918bba1080",
-            "type": "TRANSFORM"
-        },
-        "dependencies": {},
-        "elementId": "add_user_to_text_string_1",
-        "elementLabel": "Add User to Text String 1",
-        "eventMappings": [
-            
-        ],
-        "inputValues": {
-            "userFullName": {
-                "binding": {
-                    "address": [
-                        "user",
-                        "fullName"
-                    ],
-                    "category": "session"
-                },
-                "type": "CONTEXT_BINDING"
-            }
-        },
-        "readEvaluationMode": "EAGER"
     }
 ]</data>
         <description/>
-        <dispatched_events>bf09a9a293aa02105c90b6918bba101e</dispatched_events>
+        <dispatched_events>bf09a9a293aa02105c90b6918bba101e,9ffdd3c393e242105c90b6918bba10b3</dispatched_events>
         <ext_controller_dep/>
         <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
         <extension_point/>
@@ -3771,6 +4395,7 @@
             {
                 "element_id": "next_needit_row",
                 "styles": {
+                    "align-self": "flex-end",
                     "background": "#81B5A1",
                     "hex": "",
                     "width": "100%"
@@ -3809,6 +4434,9 @@
     
 ]</props>
         <required_translations>[ {
+  "message" : " Record number",
+  "comment" : ""
+}, {
   "message" : "Active NeedIts",
   "comment" : ""
 }, {
@@ -3819,6 +4447,12 @@
   "comment" : ""
 }, {
   "message" : "Closed NeedIts",
+  "comment" : ""
+}, {
+  "message" : "Done",
+  "comment" : ""
+}, {
+  "message" : "Enter a label",
   "comment" : ""
 }, {
   "message" : "Facilities",
@@ -3839,6 +4473,9 @@
   "message" : "NeedIts Awaiting Approval",
   "comment" : ""
 }, {
+  "message" : "Next NeedIt Details",
+  "comment" : ""
+}, {
   "message" : "No data available.",
   "comment" : ""
 }, {
@@ -3851,7 +4488,13 @@
   "message" : "The NeedIt Experience",
   "comment" : ""
 }, {
+  "message" : "The record form will go here",
+  "comment" : ""
+}, {
   "message" : "View NeedIt records that need to be approved",
+  "comment" : ""
+}, {
+  "message" : "View Record",
   "comment" : ""
 }, {
   "message" : "View active NeedIt records",
@@ -3897,14 +4540,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2024-06-03 07:58:24</sys_created_on>
         <sys_id>92ee8eb14762021078e7a22f316d438f</sys_id>
-        <sys_mod_count>66</sys_mod_count>
+        <sys_mod_count>87</sys_mod_count>
         <sys_name>NeedIt Admin home</sys_name>
         <sys_package display_value="NeedIt" source="x_58872_needit">6ead8e780f603200cd674f8ce1050ed1</sys_package>
         <sys_policy/>
         <sys_scope display_value="NeedIt">6ead8e780f603200cd674f8ce1050ed1</sys_scope>
         <sys_update_name>sys_ux_macroponent_92ee8eb14762021078e7a22f316d438f</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2024-06-07 10:58:05</sys_updated_on>
+        <sys_updated_on>2024-06-08 15:20:21</sys_updated_on>
     </sys_ux_macroponent>
     <sys_translated_text action="delete_multiple" query="documentkey=92ee8eb14762021078e7a22f316d438f"/>
 </record_update>
